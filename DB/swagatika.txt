@@ -1,0 +1,14 @@
+CREATE TABLE `m_gallery` (
+  `galleryId` int(11) NOT NULL AUTO_INCREMENT,
+  `caption` varchar(256) DEFAULT NULL,
+  `type` varchar(32) DEFAULT NULL,
+  `url` varchar(256) DEFAULT NULL,
+  `galleryImage` varchar(128) DEFAULT NULL,
+  `deletedFlag` tinyint(1) DEFAULT '0',
+  `createdOn` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `createdBy` int(11) DEFAULT '0',
+  `updatedOn` datetime DEFAULT NULL,
+  `updatedBy` int(11) DEFAULT '0',
+  `publishStatus` tinyint(3) DEFAULT '0',
+  PRIMARY KEY (`galleryId`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;

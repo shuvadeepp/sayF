@@ -1,0 +1,16 @@
+CREATE TABLE `t_notification` (
+  `notificationId` bigint(20) NOT NULL AUTO_INCREMENT,
+  `notificationDesc` text,
+  `notificationType` tinyint(4) NOT NULL DEFAULT '0',
+  `notificationFrom` bigint(20) NOT NULL DEFAULT '0',
+  `notificationTo` bigint(20) NOT NULL DEFAULT '0',
+  `readStatus` tinyint(1) NOT NULL DEFAULT '0',
+  `notifyCommonId` bigint(20) NOT NULL DEFAULT '0',
+  `createdOn` datetime DEFAULT CURRENT_TIMESTAMP,
+  `createdBy` bigint(20) NOT NULL DEFAULT '0',
+  `deletedFlag` bit(1) DEFAULT b'0',
+  PRIMARY KEY (`notificationId`),
+  KEY `IDX_NOTIFY_TYPE` (`notificationType`,`deletedFlag`),
+  KEY `IDX_READ_STATUS` (`readStatus`,`deletedFlag`),
+  KEY `IDX_COMMON_ID` (`notifyCommonId`,`deletedFlag`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;

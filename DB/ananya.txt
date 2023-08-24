@@ -1,0 +1,18 @@
+CREATE TABLE `t_partner_details_counter` (
+  `detailsPartnerCounterId` int(11) NOT NULL AUTO_INCREMENT,
+  `partnerId` int(11) DEFAULT NULL,
+  `counter` int(11) DEFAULT NULL,
+  `createdOn` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `deletedFlag` bit(1) DEFAULT b'0',
+  PRIMARY KEY (`detailsPartnerCounterId`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE `t_job_details_counter` (
+  `detailsCounterId` int(11) NOT NULL AUTO_INCREMENT,
+  `jobId` int(11) DEFAULT NULL,
+  `counter` int(11) DEFAULT NULL,
+  `createdOn` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `deletedFlag` bit(1) DEFAULT b'0',
+  PRIMARY KEY (`detailsCounterId`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;

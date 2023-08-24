@@ -1,0 +1,676 @@
+:root{
+	--primary:#00365f;
+	--primary-dark:#001e35;
+    --primary-light: #003a6c;
+	--secondary:#25a144;
+	--secondary-dark:#1b8837;
+    --secondary-light: #47b98b;
+    --heading-bg: #1aa86e;
+    --white: #ffffff;
+	--trans-white:rgba(255, 255, 255, .9);
+    --slider-dot-bg: #333;
+    --grey-f2: #f2f2f2;
+    /* --warning: #feb953; */
+    --danger: rgb(220 49 57);
+    --body-font:'Lato', sans-serif;
+    --stylish-font:'Architects Daughter', cursive;
+}
+
+.page-wrapper{min-height: 50vh;padding: 50px 0 0;}
+.app-header-container{
+	display: flex;justify-content: space-between;align-items: center;
+	height: 82px;width: 100%;
+}
+
+.btn{
+	padding: 8px 20px;
+    border-radius: 3px;
+}
+.btn-default {
+    background: #eee;
+    color: #333;
+}
+.btn-primary{
+    background: var(--primary);
+    color: var(--trans-white);
+}
+.btn-primary.line-btn{
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+}
+.btn-secondary{
+    background: var(--secondary);
+    color: var(--trans-white);
+}
+.btn-secondary.line-btn{
+    background: transparent;
+    border: 1px solid var(--secondary);
+    color: var(--secondary);
+}
+.btn-danger{
+    background: var(--danger);
+    color: var(--trans-white);
+}
+.btn-info{
+    background: rgb(18 182 232);
+    color: var(--trans-white);
+}
+/* .line-btn{} */
+.btn-default:hover {
+    box-shadow: 0 0 10px rgba(0 ,0 ,0 ,.33);
+}
+
+.btn-primary:hover, .btn-primary:focus{
+    background: var(--primary-dark);
+    color: var(--trans-white);
+    box-shadow: 0 0 10px rgba(0 ,0 ,0 ,.33);
+}
+.btn-primary.line-btn:hover, .btn-primary.line-btn:focus{
+    background: var(--primary);
+}
+.btn-secondary:hover, .btn-secondary:focus,.btn-secondary.active{
+    background: var(--secondary-dark);
+    color: var(--trans-white);
+    box-shadow: 0 0 10px rgba(0 ,0 ,0 ,.33);
+}
+.btn-secondary.line-btn:hover, .btn-secondary.line-btn:focus{
+    background: var(--secondary);
+}
+.btn-danger:hover, .btn-danger:focus{
+    background: #b12c32;
+    color: var(--trans-white);
+    box-shadow: 0 0 10px rgba(0 ,0 ,0 ,.33);
+}
+.btn-info:hover, .btn-info:focus{
+    background: #2f9abb;
+    color: var(--trans-white);
+    box-shadow: 0 0 10px rgba(0 ,0 ,0 ,.33);
+}
+
+/*Dropdown*/
+.dropdown-container{position: relative;}
+.dropdown-handle{cursor: pointer;font-size: 25px;}
+.dropdown-box{
+	position: absolute;z-index: 9999 !important;
+	transform: scale(0);transition: .25s ease all;transform-origin: top right;opacity: 0;
+	padding: 0;margin: 0;
+	background: rgb(255 255 255);
+    right: 0;
+    width: 235px;
+    list-style: none;
+    box-shadow: 0 0 10px rgba(0,0,0, .2);
+    border-radius: 2px;
+}
+.dropdown-box li{
+	display: flex;align-items: center;
+	padding: .7rem 1.5rem;border-bottom: 1px solid rgba(0,0,0, .08);cursor: pointer;
+}
+.dropdown-box li span{
+	font-size: 1.2rem;
+	margin-right: .8rem;
+}
+.dropdown-box li:hover{background: #f7f7f7}
+.dropdown-box li:last-child{border: none}
+
+.dropdown-handle:hover, .dropdown-container.active .dropdown-handle{color: green}
+.dropdown-container.active .dropdown-box{
+	transform: scale(1);opacity: 1;
+}
+hr {
+    border: 1px solid rgb(229 229 229);
+}
+
+.trans-text {
+    color: rgb(134 134 134 / 85%)!important}
+.no-shadow{box-shadow: none !important}
+.bor-none{border: none !important}
+.b-r-0{border-right: none !important}
+.b-l-0{border-left: none !important}
+.bor-r{border-right: 1px solid rgb(221 230 239) !important}
+.bor-l{border-left: 1px solid rgb(221 230 239) !important}
+
+/*Form Validation*/
+.errDiv {
+    display: none;
+    color: #e21f11;
+    position: relative;
+    top: -13px;
+    font-size: .9rem;
+}
+.error-input {
+    border-color: #e21f11 !important;
+    box-shadow: 0 1px 10px 0px rgb(255 5 5 / 15%) !important;
+}
+.error-input>button {
+    border-color: #e21f11 !important;
+}
+.notification.error ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/*Modal notification*/
+.noti-success {
+    padding: 30px 45px;
+}
+.checkmark__circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  stroke: var(--secondary);
+  fill: none;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 2;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  margin: 5% auto;
+  box-shadow: inset 0px 0px 0px var(--secondary);
+  animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+}
+
+.checkmark__check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+.noti-msg{
+	position: relative;
+	font-size: 1.1rem;
+	text-align: center;
+	color: #014813;
+	opacity: 0;
+	animation: fadeup 0.5s forwards;
+	animation-delay: 1s;
+}
+
+@keyframes fadeup {
+  0% {opacity: 0;bottom: -10px}
+  100% {opacity: 1;bottom: 0;}
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes scale {
+  0%, 100% {
+    transform: none;
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+@keyframes fill {
+  100% {
+    box-shadow: inset 0px 0px 0px 30px var(--secondary);
+  }
+}
+
+
+/*Section loader*/
+.loading{position: relative;}
+.loading:before, .loading:after{
+	content: "" !important;
+	position: absolute !important;left: 0 !important;top: 0 !important;right: 0 !important;bottom: 0 !important;
+}
+.loading:before {
+    background: rgb(0 0 0 / 20%) !important;
+    z-index: 998 !important;
+    backdrop-filter: blur(7px) !important;
+    opacity: 1 !important;
+    transform: none !important;
+    height: 100% !important;
+}
+.loading:after{
+	z-index: 999 !important;
+	background-image: url("../../public/images/logo-loader.svg") !important;
+	background-repeat: no-repeat !important;
+	background-position: center !important;
+	background-size: 100px !important;
+	animation: rotate 1.1s .5s infinite !important;
+}
+
+@keyframes rotate{
+	0%{transform: rotate(180deg);}
+	50%{transform: rotate(360deg);}
+	100%{transform: rotate(360deg);}
+}
+
+
+/*Form label info*/
+.label-info {
+	display: inline-block;
+    position: relative;
+    top: -15px;
+    color: rgb(127 127 127);
+}
+
+/*Under construction modal SVG animation*/
+@-webkit-keyframes writeLine {
+  0% {
+    -webkit-clip-path: polygon(0 0, 0 100%, 0 100%, 0 0);
+            clip-path: polygon(0 0, 0 100%, 0 100%, 0 0);
+  }
+  100% {
+    -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+            clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+  }
+}
+@keyframes writeLine {
+  0% {
+    -webkit-clip-path: polygon(0 0, 0 100%, 0 100%, 0 0);
+            clip-path: polygon(0 0, 0 100%, 0 100%, 0 0);
+  }
+  100% {
+    -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+            clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+  }
+}
+@-webkit-keyframes keydown {
+  0% {
+    fill-opacity: 0.1;
+  }
+  15% {
+    fill-opacity: 0.3;
+  }
+  30% {
+    fill-opacity: 0.1;
+  }
+}
+@keyframes keydown {
+  0% {
+    fill-opacity: 0.1;
+  }
+  15% {
+    fill-opacity: 0.3;
+  }
+  30% {
+    fill-opacity: 0.1;
+  }
+}
+@-webkit-keyframes appOpen {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes appOpen {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.under-construction-modal .modal-body {
+    background: #dedede;
+    display: flex;
+    align-items: center;
+    padding: 3rem;
+}
+.under-construction-modal .modal-body h4 {
+    font-size: 2.25rem;
+    line-height: 1.5;
+    color: rgb(97 95 95);
+    font-weight: 500;
+    margin-bottom: 2rem;
+    padding-right: 1rem;
+}
+.mac-wrapper {
+    width: 50%;
+    flex: 0 0 50%;
+}
+.mac-wrapper svg {
+  height: auto;
+}
+.mac-wrapper svg #CodeEditorWindow {
+  display: none;
+}
+.mac-wrapper.start #CodeEditorWindow {
+  display: block;
+  animation: 0.5s ease-out 0s 1 normal forwards appOpen, 0.5s ease-out 27s 1 reverse forwards appOpen;
+  transform-origin: center center;
+}
+.mac-wrapper.start [id^=codeline] {
+  -webkit-clip-path: polygon(0 0, 0 100%, 0 100%, 0 0);
+          clip-path: polygon(0 0, 0 100%, 0 100%, 0 0);
+  -webkit-animation: writeLine 1s linear forwards;
+          animation: writeLine 1s linear forwards;
+}
+.mac-wrapper.start #codeline1 {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+.mac-wrapper.start #codeline2 {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+.mac-wrapper.start #codeline3 {
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+.mac-wrapper.start #codeline4 {
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+}
+.mac-wrapper.start #codeline5 {
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
+}
+.mac-wrapper.start #codeline6 {
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+}
+.mac-wrapper.start #codeline7 {
+  -webkit-animation-delay: 7s;
+          animation-delay: 7s;
+}
+.mac-wrapper.start #codeline8 {
+  -webkit-animation-delay: 8s;
+          animation-delay: 8s;
+}
+.mac-wrapper.start #codeline9 {
+  -webkit-animation-delay: 9s;
+          animation-delay: 9s;
+}
+.mac-wrapper.start #codeline10 {
+  -webkit-animation-delay: 10s;
+          animation-delay: 10s;
+}
+.mac-wrapper.start #codeline11 {
+  -webkit-animation-delay: 11s;
+          animation-delay: 11s;
+}
+.mac-wrapper.start #codeline12 {
+  -webkit-animation-delay: 12s;
+          animation-delay: 12s;
+}
+.mac-wrapper.start #codeline13 {
+  -webkit-animation-delay: 13s;
+          animation-delay: 13s;
+}
+.mac-wrapper.start #codeline14 {
+  -webkit-animation-delay: 14s;
+          animation-delay: 14s;
+}
+.mac-wrapper.start #codeline15 {
+  -webkit-animation-delay: 15s;
+          animation-delay: 15s;
+}
+.mac-wrapper.start #codeline16 {
+  -webkit-animation-delay: 16s;
+          animation-delay: 16s;
+}
+.mac-wrapper.start #codeline17 {
+  -webkit-animation-delay: 17s;
+          animation-delay: 17s;
+}
+.mac-wrapper.start #codeline18 {
+  -webkit-animation-delay: 18s;
+          animation-delay: 18s;
+}
+.mac-wrapper.start #codeline19 {
+  -webkit-animation-delay: 19s;
+          animation-delay: 19s;
+}
+.mac-wrapper.start #codeline20 {
+  -webkit-animation-delay: 20s;
+          animation-delay: 20s;
+}
+.mac-wrapper.start #codeline21 {
+  -webkit-animation-delay: 21s;
+          animation-delay: 21s;
+}
+.mac-wrapper.start #codeline22 {
+  -webkit-animation-delay: 22s;
+          animation-delay: 22s;
+}
+.mac-wrapper.start #codeline23 {
+  -webkit-animation-delay: 23s;
+          animation-delay: 23s;
+}
+.mac-wrapper.start #codeline24 {
+  -webkit-animation-delay: 24s;
+          animation-delay: 24s;
+}
+.mac-wrapper.start #codeline25 {
+  -webkit-animation-delay: 25s;
+          animation-delay: 25s;
+}
+.mac-wrapper.start #codeline26 {
+  -webkit-animation-delay: 26s;
+          animation-delay: 26s;
+}
+.mac-wrapper.start #keyboard8 {
+  -webkit-animation-name: keydown;
+          animation-name: keydown;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 1776ms;
+          animation-delay: 1776ms;
+  -webkit-animation-iteration-count: 26;
+          animation-iteration-count: 26;
+}
+.mac-wrapper.start #keyboard16 {
+  -webkit-animation-name: keydown;
+          animation-name: keydown;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 1616ms;
+          animation-delay: 1616ms;
+  -webkit-animation-iteration-count: 26;
+          animation-iteration-count: 26;
+}
+.mac-wrapper.start #keyboard42 {
+  -webkit-animation-name: keydown;
+          animation-name: keydown;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 1634ms;
+          animation-delay: 1634ms;
+  -webkit-animation-iteration-count: 26;
+          animation-iteration-count: 26;
+}
+.mac-wrapper.start #keyboard11 {
+  -webkit-animation-name: keydown;
+          animation-name: keydown;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 1915ms;
+          animation-delay: 1915ms;
+  -webkit-animation-iteration-count: 26;
+          animation-iteration-count: 26;
+}
+.mac-wrapper.start #keyboard24 {
+  -webkit-animation-name: keydown;
+          animation-name: keydown;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 1493ms;
+          animation-delay: 1493ms;
+  -webkit-animation-iteration-count: 26;
+          animation-iteration-count: 26;
+}
+.mac-wrapper.start #keyboard28 {
+  -webkit-animation-name: keydown;
+          animation-name: keydown;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 1555ms;
+          animation-delay: 1555ms;
+  -webkit-animation-iteration-count: 26;
+          animation-iteration-count: 26;
+}
+.mac-wrapper.start #keyboard44 {
+  -webkit-animation-name: keydown;
+          animation-name: keydown;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 1818ms;
+          animation-delay: 1818ms;
+  -webkit-animation-iteration-count: 26;
+          animation-iteration-count: 26;
+}
+.mac-wrapper.start #keyboard20 {
+  -webkit-animation-name: keydown;
+          animation-name: keydown;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 1510ms;
+          animation-delay: 1510ms;
+  -webkit-animation-iteration-count: 26;
+          animation-iteration-count: 26;
+}
+.mac-wrapper.start #keyboard13 {
+  -webkit-animation-name: keydown;
+          animation-name: keydown;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 1929ms;
+          animation-delay: 1929ms;
+  -webkit-animation-iteration-count: 26;
+          animation-iteration-count: 26;
+}
+.mac-wrapper.start #keyboard38 {
+  -webkit-animation-name: keydown;
+          animation-name: keydown;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 1339ms;
+          animation-delay: 1339ms;
+  -webkit-animation-iteration-count: 26;
+          animation-iteration-count: 26;
+}
+.mac-wrapper.start #keyboard10 {
+  -webkit-animation-name: keydown;
+          animation-name: keydown;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 1045ms;
+          animation-delay: 1045ms;
+  -webkit-animation-iteration-count: 26;
+          animation-iteration-count: 26;
+}
+.mac-wrapper.start #keyboard2 {
+  -webkit-animation-name: keydown;
+          animation-name: keydown;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 1353ms;
+          animation-delay: 1353ms;
+  -webkit-animation-iteration-count: 26;
+          animation-iteration-count: 26;
+}
+.mac-wrapper.start #keyboard1 {
+  -webkit-animation-name: keydown;
+          animation-name: keydown;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 1877ms;
+          animation-delay: 1877ms;
+  -webkit-animation-iteration-count: 26;
+          animation-iteration-count: 26;
+}
+.mac-wrapper.start #keyboard10 {
+  -webkit-animation-name: keydown;
+          animation-name: keydown;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 1030ms;
+          animation-delay: 1030ms;
+  -webkit-animation-iteration-count: 26;
+          animation-iteration-count: 26;
+}
+.mac-wrapper.start #keyboard36 {
+  -webkit-animation-name: keydown;
+          animation-name: keydown;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 1777ms;
+          animation-delay: 1777ms;
+  -webkit-animation-iteration-count: 26;
+          animation-iteration-count: 26;
+}
+.mac-wrapper.start #keyboard40 {
+  -webkit-animation-name: keydown;
+          animation-name: keydown;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 1496ms;
+          animation-delay: 1496ms;
+  -webkit-animation-iteration-count: 26;
+          animation-iteration-count: 26;
+}
+.mac-wrapper.start #keyboard42 {
+  -webkit-animation-name: keydown;
+          animation-name: keydown;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 1316ms;
+          animation-delay: 1316ms;
+  -webkit-animation-iteration-count: 26;
+          animation-iteration-count: 26;
+}
+.mac-wrapper.start #keyboard34 {
+  -webkit-animation-name: keydown;
+          animation-name: keydown;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 1858ms;
+          animation-delay: 1858ms;
+  -webkit-animation-iteration-count: 26;
+          animation-iteration-count: 26;
+}
+.mac-wrapper.start #keyboard-return {
+  -webkit-animation-name: keydown;
+          animation-name: keydown;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  -webkit-animation-iteration-count: 26;
+          animation-iteration-count: 26;
+}
+
+@media (max-width: 576px){
+	.under-construction-modal .modal-body {
+	    flex-flow: column-reverse;
+	}
+	.mac-wrapper {
+	    width: 100%;
+	    flex: 0 0 100%;
+	    margin-bottom: 2rem;
+	}
+	.under-construction-modal .modal-body h4 {
+	    font-size: 1.5rem;
+	    margin-bottom: 0;
+	    padding-right: 0;
+	    text-align: center;
+	}
+}
+/*Under construction modal SVG animation end*/

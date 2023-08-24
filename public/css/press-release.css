@@ -1,0 +1,109 @@
+/* press release follow links */
+
+
+.follow-link {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 1rem 0;
+	/* gap: 1rem; */
+} 
+.follow-link a i{
+ padding-right: .25rem;
+}
+.follow-link a {
+	border-radius: 2rem;
+    padding: 0.7rem 1.5rem;
+    border: 1px solid;
+    background: var(--white);
+    color: var(--black); 
+    line-height: 1;
+    font-size: 1.1rem;
+    transition: .3s;
+    text-align: center;
+    margin:0 1rem 1rem 0;
+}
+
+ul.press-release-list {
+    list-style: none;
+    line-height: 1.2;
+    height: 500px;
+    /* border-left: 1px solid #ddd; */
+    overflow: auto;
+    padding: 0;
+}
+
+.press-release-list::-webkit-scrollbar {
+    width: 6px;
+    border-radius: 6px;
+}
+.press-release-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+.press-release-list::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 6px;
+}
+/* .press-release-list::-webkit-scrollbar-thumb:hover {
+    background: #555;
+} */
+
+ul.press-release-list li {
+    display: flex;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #c7c7c7;
+}
+ul.press-release-list li:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+.press-date {
+    background: rgba(0 ,54, 95 ,.51);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: .25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    margin-right: 1rem;
+} 
+.press-date .day {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.press-release-list-title {
+    font-size: 1.05rem;
+    color: inherit;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+.press-release-list-title:hover {
+    color: var(--secondary);
+}
+.press-release-time {
+    opacity: .8;
+}
+.press-release-time a {
+    color: inherit;
+}
+.press-release-time a:hover {
+    color: var(--secondary);
+}
+
+ul.press-release-list li.active .press-date  {
+    background: rgba(0 ,54, 95 ,1);
+}
+ul.press-release-list li.active .press-release-list-title {
+    color: var(--secondary) !important;
+}
+
+@media (max-width: 991px) { 
+    ul.press-release-list {
+        max-height: 500px;
+        height: auto;
+    } 
+} 
